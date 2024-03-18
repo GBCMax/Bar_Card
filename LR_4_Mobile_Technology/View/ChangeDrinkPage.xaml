@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bar_Card.View.ChangeDrinkPage"
+             xmlns:vm="clr-namespace:Bar_Card.ViewModel"
+             Title="Изменить напиток">
+    <ContentPage.BindingContext>
+        <vm:ChangeDrinkViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <Entry Text="{Binding Drinks.Name}" Placeholder="Название" Style="{StaticResource GridLabelStyle}"/>
+        <Entry Text="{Binding Drinks.Price}" Placeholder="Цена" Style="{StaticResource GridLabelStyle}"/>
+        <Entry Text="{Binding Drinks.Consists}" Placeholder="Состав" Style="{StaticResource GridLabelStyle}"/>
+        <Entry Text="{Binding Drinks.Volume}" Placeholder="Объем (мл)" Style="{StaticResource GridLabelStyle}"/>
+        <Button Command="{Binding ChangeDrinkCommand}" Text="Изменить" Style="{StaticResource GridLabelStyle}"/>
+    </StackLayout>
+</ContentPage>

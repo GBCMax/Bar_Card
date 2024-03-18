@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Bar_Card.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Bar_Card"
+    xmlns:views="clr-namespace:Bar_Card.View"
+    Title="LR_4_Mobile_Technology">
+
+    <FlyoutItem Title="Барная карта"
+                Icon="drink.png">
+        <Tab>
+            <ShellContent Route="DefaultPage" Icon="drink.png"
+                ContentTemplate="{DataTemplate views:DefaultPage}"/>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Добавление напитка"
+                Icon="add.png">
+        <Tab>
+            <ShellContent Route="AddDrink" Icon="add.png"
+                ContentTemplate="{DataTemplate views:AddDrink}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Сканирование напитка"
+        Icon="uebatbsya.jpg">
+        <Tab Icon="uebatbsya.jpg">
+            <ShellContent Route="QRScannerPage" FlyoutIcon="uebatbsya.jpg"
+            ContentTemplate="{DataTemplate views:QRScannerPage}" />
+        </Tab>
+    </FlyoutItem>
+
+</Shell>

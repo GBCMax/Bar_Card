@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bar_Card.View.FullInfoDrinkPage"
+             xmlns:vm="clr-namespace:Bar_Card.ViewModel"
+             Title="Полная информация о напитке">
+    <ContentPage.BindingContext>
+        <vm:FullInfoDrinkViewModel/>
+    </ContentPage.BindingContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовки колонок -->
+        <Grid Grid.Row="0" BackgroundColor="LightGray" Padding="5" VerticalOptions="StartAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Text="Название" HorizontalOptions="Center"/>
+            <Label Grid.Column="1" Text="Цена" HorizontalOptions="Center"/>
+            <Label Grid.Column="2" Text="Состав" HorizontalOptions="Center"/>
+            <Label Grid.Column="3" Text="Объем" HorizontalOptions="Center"/>
+        </Grid>
+        
+        <!-- Данные -->
+        <Grid Grid.Row="1" BackgroundColor="BlueViolet" Margin="0" Padding="1" ColumnSpacing="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Text="{Binding Drinks.Name}" Style="{StaticResource GridLabelStyle}"/>
+            <Label Grid.Column="1" Text="{Binding Drinks.Price}" Style="{StaticResource GridLabelStyle}"/>
+            <Label Grid.Column="2" Text="{Binding Drinks.Consists}" Style="{StaticResource GridLabelStyle}"/>
+            <Label Grid.Column="3" Text="{Binding Drinks.Volume}" Style="{StaticResource GridLabelStyle}"/>
+        </Grid>
+    </Grid>
+</ContentPage>

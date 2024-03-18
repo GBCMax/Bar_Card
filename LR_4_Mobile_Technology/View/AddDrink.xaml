@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bar_Card.View.AddDrink"
+             xmlns:vm="clr-namespace:Bar_Card.ViewModel"
+             Title="Добавление напитка">
+    <ContentPage.BindingContext>
+        <vm:AddDrinkViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <ImageButton Source="/Resources/Images/uebatbsya.png" Command="{Binding QRScanCommand}"
+                     HeightRequest="50" WidthRequest="50" HorizontalOptions="End"/>
+        <Entry Text="{Binding Name}" Placeholder="Название" Style="{StaticResource GridLabelStyle}"/>
+        <Entry Text="{Binding Price}" Placeholder="Цена" Style="{StaticResource GridLabelStyle}"/>
+        <Entry Text="{Binding Consists}" Placeholder="Состав" Style="{StaticResource GridLabelStyle}"/>
+        <Entry Text="{Binding Volume}" Placeholder="Объем (мл)" Style="{StaticResource GridLabelStyle}"/>
+        <Button Command="{Binding AddDrinkCommand}" Text="Добавить" Style="{StaticResource GridLabelStyle}"/>
+    </StackLayout>
+</ContentPage>
